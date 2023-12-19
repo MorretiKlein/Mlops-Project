@@ -13,4 +13,5 @@ joblib
 types-PyYAML
 Flask
 Flask-Cors
+opencv-python
 -e .

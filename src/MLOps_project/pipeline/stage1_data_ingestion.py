@@ -1,5 +1,5 @@
 from MLOps_project.config.configuration import *
-from MLOps_project.constant.data_ingestion import *
+from MLOps_project.compoment.data_ingestion import *
 from MLOps_project import logger
 
 STAGE_NAME = "DATA INGESTION STAGE"

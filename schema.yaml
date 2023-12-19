@@ -1,1 +1,6 @@
-key: value
+COLUMNS:
+  ImageID: object
+  XMin: float64
+  XMax: float64
+  YMin: float64
+  YMax: float64

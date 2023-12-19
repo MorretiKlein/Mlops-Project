@@ -8,3 +8,13 @@ class DataIngestionConfig: # class storage config of data ingestion
     local_data_file: Path
     source_URL_for_image: Path
     source_code_download: Path
+    
+@dataclass(frozen=True) #1 class immutable
+class DataValidation_PreprocessConfig:
+    root_dir: Path
+    STATUS_FILE: str
+    label_root_data: Path
+    label_process_data: Path
+    image_root_data: Path
+    image_process_data: Path
+    choose_schema: dict

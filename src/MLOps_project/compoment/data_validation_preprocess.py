@@ -24,6 +24,7 @@ class DataValidation_Preprocess:
             for col in all_cols:
                 if col not in choose_schema:
                     validation_status = 0
+                    self.data = self.data.drop(col, axis=1)
                     with open(self.config.STATUS_FILE, 'a') as f:
                         f.write(f"Validation status of choose{col} for schema: {validation_status}\n")
                 else:
@@ -56,7 +57,7 @@ class DataValidation_Preprocess:
             for file in os.listdir(path):
                 image = cv2.imread(path + file)
                 image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-                image = cv2.resize(image, (240,180))
+                image = cv2.resize(image, (460,460), interpolation=cv2.INTER_CUBIC)
                 image = Image.fromarray(image)
                 image.save(os.path.join(destination, file))
             validation_process_status = 1

@@ -6,7 +6,7 @@ STAGE_NAME = "DATA VALIDATE AND PREPROCESS STAGE"
 class Data_validate_preprocess_stage:
     def __init__(self):
         pass
-    def main():
+    def main(self):
         config = ConfigurationManager()
         data_validation_config = config.get_data_validation_config()
         data_validation_process = DataValidation_Preprocess(config=data_validation_config)

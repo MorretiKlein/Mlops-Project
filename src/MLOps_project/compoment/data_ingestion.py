@@ -1,5 +1,4 @@
 import os
-import time
 import urllib.request as request # use to download file from url
 import subprocess
 from MLOps_project import logger

@@ -48,3 +48,18 @@ class ConfigurationManager: # manage: read and use files config
             choose_schema = schema
         )
         return data_validation_config
+    
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+        config = self.config.data_transformation
+
+        create_directories([config.root_dir])
+
+        data_transformation_config = DataTransformationConfig(
+            root_dir=config.root_dir,
+            label_process_data=config.label_process_data,
+            image_train_data = config.image_train_data,
+            image_test_data = config.image_test_data,
+            image_root_data= config.image_root_data
+        )
+
+        return data_transformation_config

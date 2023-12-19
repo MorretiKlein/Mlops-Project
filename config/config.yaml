@@ -9,7 +9,7 @@ data_ingestion:
   source_code_download: https://raw.githubusercontent.com/openimages/dataset/master/downloader.py
 
 data_validation_and_preprocess:
-  root_dir: artifacts/data_validation
+  root_dir: artifacts/data_validation/
   label_root_data: artifacts/data_ingestion/label_root.csv
   label_process_data: artifacts/data_validation/label.csv
   image_root_data: artifacts/data_ingestion/image/
@@ -18,8 +18,10 @@ data_validation_and_preprocess:
 
 data_transformation:
   root_dir: artifacts/data_transformation
-  data_path: artifacts/data_ingestion/winequality-red.csv
-
+  label_process_data: artifacts/data_validation/label.csv
+  image_train_data: artifacts/data_transformation/train/
+  image_test_data: artifacts/data_transformation/test/
+  image_root_data: artifacts/data_validation/image/
 
 
 model_trainer:

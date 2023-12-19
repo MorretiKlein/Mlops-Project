@@ -18,3 +18,11 @@ class DataValidation_PreprocessConfig:
     image_root_data: Path
     image_process_data: Path
     choose_schema: dict
+
+@dataclass(frozen = True)
+class DataTransformationConfig:
+    root_dir: Path
+    label_process_data: Path
+    image_train_data: Path
+    image_test_data: Path
+    image_root_data: Path

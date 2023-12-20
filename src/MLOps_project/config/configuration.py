@@ -63,3 +63,16 @@ class ConfigurationManager: # manage: read and use files config
         )
 
         return data_transformation_config
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+        config = self.config.model_trainer
+        create_directories([config.root_dir])
+
+        model_trainer_config = ModelTrainerConfig(
+            root_dir=config.root_dir,
+            all_data = config.all_data,
+            image_train_data = config.image_train_data,
+            image_test_data = config.image_test_data,
+            model_name = config.model_name
+        )
+
+        return model_trainer_config

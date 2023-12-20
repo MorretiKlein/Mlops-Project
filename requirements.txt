@@ -1,7 +1,7 @@
+ultralytics
 pandas 
 mlflow==2.2.2
 notebook
-tensorflow_data_validation 
 numpy
 scikit-learn
 matplotlib

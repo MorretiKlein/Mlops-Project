@@ -17,24 +17,22 @@ data_validation_and_preprocess:
   STATUS_FILE: artifacts/data_validation/status.txt
 
 data_transformation:
-  root_dir: artifacts/data_transformation
+  root_dir: artifacts/data_transformation/
   label_process_data: artifacts/data_validation/label.csv
-  image_train_data: artifacts/data_transformation/train/
-  image_test_data: artifacts/data_transformation/test/
+  image_train_data: artifacts/data_transformation/images/train/
+  image_test_data: artifacts/data_transformation/images/test/
   image_root_data: artifacts/data_validation/image/
 
 
 model_trainer:
-  root_dir: artifacts/model_trainer
-  train_data_path: artifacts/data_transformation/train.csv
-  test_data_path: artifacts/data_transformation/test.csv
-  model_name: model.joblib
+  root_dir: artifacts/model_trainning
+  all_data: artifacts/data_transformation/
+  image_train_data: artifacts/data_transformation/images/train/
+  image_test_data: artifacts/data_transformation/images/test/
+  model_name: model.pt
 
 
 
 model_evaluation:
-  root_dir: artifacts/model_evaluation
-  test_data_path: artifacts/data_transformation/test.csv
-  model_path: artifacts/model_trainer/model.joblib
-  metric_file_name: artifacts/model_evaluation/metrics.json
+  root_dir: train/
 

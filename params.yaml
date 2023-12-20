@@ -1,1 +1,4 @@
-key : value
+model : yolov5n.pt
+data : dataset.yaml
+epochs: 30
+batch : 8

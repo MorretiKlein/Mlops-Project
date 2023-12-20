@@ -26,3 +26,12 @@ class DataTransformationConfig:
     image_train_data: Path
     image_test_data: Path
     image_root_data: Path
+
+@dataclass(frozen = True)
+class ModelTrainerConfig:
+    root_dir: Path
+    all_data: Path
+    image_train_data: Path
+    image_test_data: Path
+    model_name: str
+    

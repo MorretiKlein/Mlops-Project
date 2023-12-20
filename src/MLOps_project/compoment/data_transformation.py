@@ -17,6 +17,33 @@ class DataTransformation:
         logger.info("Splited data into training and test sets")
         logger.info(train.shape)
         logger.info(test.shape)
+        
+        self.create_labels(train, activation="train/")
+        self.create_labels(test, activation="test/")    
+    
+
+    def create_labels(self, data, activation: str):
+        for _, row in data.iterrows():
+            image_file = row['ImageID']
+            class_id = "0"
+            x = row['XMin']
+            y = row['YMin']
+            width = row['XMax'] - row['XMin']
+            height = row['YMax'] - row['YMin']
+
+            x_center = x + (width / 2)
+            y_center = y + (height / 2)
+            
+            labels_dir = os.path.join(self.config.root_dir, "labels")
+            self.create_folder(labels_dir)
+            activation_dir = os.path.join(labels_dir, activation)
+            self.create_folder(activation_dir)
+
+            annotation_file = os.path.join(activation_dir, image_file + '.txt')
+            with open(annotation_file, 'w') as ann_file:
+                ann_file.write(f"{class_id} {x_center} {y_center} {width} {height}\n")
+        
+        logger.info(f"Created label folders finished")
 
     def image_splitting(self):
         train_data = pd.read_csv(os.path.join(self.config.root_dir, "train.csv"))
@@ -50,4 +77,5 @@ class DataTransformation:
             if file.endswith(".jpg") and file in list_data:
                 source_path = os.path.join(source_folder, file)
                 target_path = os.path.join(target_folder, file)
-                shutil.copy(source_path, target_path)        
+                shutil.copy(source_path, target_path)   
+    

@@ -34,7 +34,7 @@ model_trainer:
 
 
 model_evaluation:
-  root_dir: evaluation/
+  root_dir: evaluation/train/
   dataset_path: artifacts/data_transformation/train.csv
 
 

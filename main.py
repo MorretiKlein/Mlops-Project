@@ -44,3 +44,13 @@ try:
 except Exception as e:
     logger.exception(e)
     raise e
+
+STAGE_NAME = "Evaluation"
+try:
+    logger.info(f"{STAGE_NAME} started")
+    obj = Trainning_Stage()
+    obj.main()
+    logger.info(f"{STAGE_NAME} finished")
+except Exception as e:
+    logger.exception(e)
+    raise e

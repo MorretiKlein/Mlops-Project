@@ -29,10 +29,12 @@ model_trainer:
   all_data: artifacts/data_transformation/
   image_train_data: artifacts/data_transformation/images/train/
   image_test_data: artifacts/data_transformation/images/test/
-  model_name: model.pt
+
 
 
 
 model_evaluation:
-  root_dir: train/
+  root_dir: evaluation/
+  dataset_path: artifacts/data_transformation/train.csv
+
 

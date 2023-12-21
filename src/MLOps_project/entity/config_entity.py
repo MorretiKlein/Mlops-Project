@@ -33,5 +33,12 @@ class ModelTrainerConfig:
     all_data: Path
     image_train_data: Path
     image_test_data: Path
-    model_name: str
-    
+    params : dict
+        
+@dataclass(frozen=True)
+class ModelEvaluationConfig:
+    root_dir: Path
+    dataset_path: Path
+    schema: list
+    params: dict
+    mlflow_uri: str

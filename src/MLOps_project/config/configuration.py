@@ -63,8 +63,12 @@ class ConfigurationManager: # manage: read and use files config
         )
 
         return data_transformation_config
+    
+    
     def get_model_trainer_config(self) -> ModelTrainerConfig:
         config = self.config.model_trainer
+        params = self.params.yolov5
+
         create_directories([config.root_dir])
 
         model_trainer_config = ModelTrainerConfig(
@@ -72,7 +76,25 @@ class ConfigurationManager: # manage: read and use files config
             all_data = config.all_data,
             image_train_data = config.image_train_data,
             image_test_data = config.image_test_data,
-            model_name = config.model_name
+            params = params
         )
 
         return model_trainer_config
+    
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        config = self.config.model_evaluation
+        params = self.params.yolov5
+        schema =  self.schema.COLUMNS
+
+        create_directories([config.root_dir])
+
+        model_evaluation_config = ModelEvaluationConfig(
+            root_dir=config.root_dir,
+            dataset_path = config.dataset_path,
+            schema = [schema.XMin, schema.XMax, schema.YMin, schema.YMax],
+            params = params ,
+            mlflow_uri= "https://dagshub.com/MorretiKlein/Mlops-Project",
+           
+        )
+
+        return model_evaluation_config

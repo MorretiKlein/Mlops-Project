@@ -1,0 +1,6 @@
+                        path: artifacts/data_transformation/
+                        train: artifacts/data_transformation/images/train/
+                        val: artifacts/data_transformation/images/test/
+                        nc: 1
+                        names: ['person']
+                        

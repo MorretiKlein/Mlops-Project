@@ -6,11 +6,11 @@ STAGE_NAME = "Trainning"
 class Trainning_Stage():
     def __init__(self):
         pass
-    def main():
+    def main(self):
         config = ConfigurationManager()
-        training_config = config.get_data_transformation_config()
+        training_config = config.get_model_trainer_config()
         trainning = ModelTrainer(config=training_config)
-        trainning.main()
+        trainning.train()
 
 if __name__ == '__main__':
     try:

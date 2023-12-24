@@ -1,8 +1,15 @@
 from flask import Flask, render_template, Response
 import cv2
 from ultralytics import YOLO
+import os
 
 app = Flask(__name__)
+
+
+# @app.route('/',methods=['GET'])
+# def training():
+#     os.system("python main.py")
+#     return "Training Successful!" 
 
 model_path = 'evaluation/train/weights/best.pt'
 model = YOLO(model_path)

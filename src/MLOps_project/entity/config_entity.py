@@ -33,7 +33,7 @@ class ModelTrainerConfig:
     all_data: Path
     image_train_data: Path
     image_test_data: Path
-    params : dict
+    # params : dict
         
 @dataclass(frozen=True)
 class ModelEvaluationConfig:

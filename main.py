@@ -3,6 +3,7 @@ from MLOps_project.pipeline.stage3_data_transformation import DataTransformation
 from MLOps_project.pipeline.stage1_data_ingestion import DataIngestionSTAGE
 from MLOps_project.pipeline.stage2_data_validate_preprocess import Data_validate_preprocess_stage
 from MLOps_project.pipeline.stage4_training import Trainning_Stage
+from MLOps_project.pipeline.stage5_model_evaluation import Evaluation
 logger.info("Welcome")
 STAGE_NAME = "DATA INGESTION STAGE"
 try:
@@ -48,7 +49,7 @@ except Exception as e:
 STAGE_NAME = "Evaluation"
 try:
     logger.info(f"{STAGE_NAME} started")
-    obj = Trainning_Stage()
+    obj = Evaluation()
     obj.main()
     logger.info(f"{STAGE_NAME} finished")
 except Exception as e:

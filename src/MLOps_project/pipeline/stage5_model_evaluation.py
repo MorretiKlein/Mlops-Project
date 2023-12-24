@@ -3,7 +3,7 @@ from MLOps_project.compoment.evaluation import *
 from MLOps_project import logger
 
 STAGE_NAME = "Evaluation"
-class Trainning_Stage():
+class Evaluation():
     def __init__(self):
         pass
     def main(self):
@@ -15,7 +15,7 @@ class Trainning_Stage():
 if __name__ == '__main__':
     try:
         logger.info(f"{STAGE_NAME} started")
-        obj = Trainning_Stage()
+        obj = Evaluation()
         obj.main()
         logger.info(f"{STAGE_NAME} finished")
     except Exception as e:

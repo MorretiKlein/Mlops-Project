@@ -36,10 +36,10 @@ class DataIngestion:
         else:
             logger.info(f"File already exists of size: {get_size(Path(self.config.local_data_file))}")
 
-        IMAGE_LIST_FILE = "artifacts\data_ingestion\\validation.lst" # self.config.root_dir +"/"+ "validation.lst"
+        IMAGE_LIST_FILE = "artifacts/data_ingestion/validation.lst" # self.config.root_dir +"/"+ "validation.lst"
 
         command = [
-            "python", "artifacts\data_ingestion\download.py",
+            "python", "artifacts/data_ingestion/download.py",
             IMAGE_LIST_FILE,
             "--download_folder=" + download_folder,
             "--num_processes=5"

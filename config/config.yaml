@@ -25,12 +25,10 @@ data_transformation:
 
 
 model_trainer:
-  root_dir: artifacts/model_trainning
-  all_data: artifacts/data_transformation/
-  image_train_data: artifacts/data_transformation/images/train/
-  image_test_data: artifacts/data_transformation/images/test/
-
-
+  root_dir: Mlops-Project/artifacts/
+  all_data: Mlops-Project/artifacts/data_transformation/
+  image_train_data: /Mlops-Project/artifacts/data_transformation/images/train/
+  image_test_data: /Mlops-Project/artifacts/data_transformation/images/test/
 
 
 model_evaluation:

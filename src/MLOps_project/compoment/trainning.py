@@ -21,5 +21,5 @@ class ModelTrainer:
     def train(self):
         self.create_yaml(path=self.config.root_dir, train_folder=self.config.image_train_data, val_folder=self.config.image_test_data)
         model = YOLO('yolov5n.pt')
-        model.train(data="dataset.yaml", epochs=self.config.params.epoch, batch=self.config.params.epoch.batch_size, project="evalution", name="model")  
+        model.train(data="dataset.yaml", epochs=self.config.params.epoch, batch=self.config.params.batch_size, project="evalution", name="model")  
     

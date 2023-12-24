@@ -1,8 +1,10 @@
 # Mlops-Project: Person detection and track with MLflow
 
-# I use MIAP dataset
+## I use MIAP dataset
 MIAP is a dataset created by obtaining a new set of annotations on a subset of the Open Images dataset, containing bounding boxes and attributes for all of the people visible in those images, as the original Open Images dataset annotations are not exhaustive, with bounding boxes and attribute labels for only a subset of the classes in each image.
 I only use a sample of dataset to use for detect person, you can use all or another sample for trainning(Details are in the section data_ingestion)
+## Model: yolov5
+Using fine-tunning with pre-trained model 
 
 ## Workflows
 1. Update config.yaml
@@ -40,11 +42,13 @@ pip install -r requirements.txt
 
 ```bash
 # Finally run the following command
+python main.py
+
 python app.py
 ```
 Now,
 ```bash
-open up you local host and port
+open up you local host and port (`http://localhost:5000`)
 ```
 
 ## MLflow

@@ -11,14 +11,14 @@ app = Flask(__name__)
 #     os.system("python main.py")
 #     return "Training Successful!" 
 
-model_path = 'evaluation/train/weights/best.pt'
-model = YOLO(model_path)
-cap = cv2.VideoCapture(0)
+
 
 def gen_frames():  
     while True:
+        model_path = 'evaluation/train/weights/best.pt'
+        model = YOLO(model_path)
+        cap = cv2.VideoCapture(0)
         ret, frame = cap.read()
-
         results = model.predict(frame)
         
         if results[0].boxes is not None:  
@@ -42,5 +42,4 @@ def video_feed():
     return Response(gen_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == "__main__":
-    app.run(debug=True)
-
+    app.run(host='0.0.0.0',port=5000,debug=True)

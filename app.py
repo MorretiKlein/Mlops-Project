@@ -14,10 +14,10 @@ app = Flask(__name__)
 
 
 def gen_frames():  
+    model_path = 'evaluation/train/weights/best.pt'
+    model = YOLO(model_path)
+    cap = cv2.VideoCapture(0)
     while True:
-        model_path = 'evaluation/train/weights/best.pt'
-        model = YOLO(model_path)
-        cap = cv2.VideoCapture(0)
         ret, frame = cap.read()
         results = model.predict(frame)
         

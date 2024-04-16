@@ -1,4 +1,4 @@
-mlflow==2.2.2
+mlflow==2.10.2
 ultralytics
 pandas 
 numpy
